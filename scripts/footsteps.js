@@ -28,22 +28,27 @@ Hooks.on('updateToken',async (scene,data,moved)=>{
 
     if (data.x >0 || data.y > 0)
     {
-        let token = canvas.tokens.controlled[0];
-        let surfaceMaterialDrawings = canvas.drawings.placeables.filter((d) => d.data.text.includes("Material"));
-        let materialName = "Default";
-        for (let drawing of surfaceMaterialDrawings) 
+        let footstepsAudioFile = game.settings.get("theyhearmewalkin","footstepsAudioDBFile");
+        if(footstepsAudioFile != "")
         {
-          let poly = new PIXI.Polygon(polygonToGlobal(drawing));
-          if (poly.contains(token.center.x, token.center.y)) 
-          {
-              materialName = drawing.data.text;
-          }
+            let token = canvas.tokens.controlled[0];
+            let surfaceMaterialDrawings = canvas.drawings.placeables.filter((d) => d.data.text.includes("Material"));
+            let materialName = "Default";
+            for (let drawing of surfaceMaterialDrawings) 
+            {
+            let poly = new PIXI.Polygon(polygonToGlobal(drawing));
+            if (poly.contains(token.center.x, token.center.y)) 
+            {
+                materialName = drawing.data.text;
+            }
+            }
+            console.log(materialName);
+            let footstepsSequence = new Sequence()
+                .sound()
+                    .file(`FootStepsAudioDB.${materialName}`)
+            footstepsSequence.play()
         }
-        console.log(materialName);
-        let footstepsSequence = new Sequence()
-            .sound()
-                .file(`EffectAudioDB.${materialName}`)
-        footstepsSequence.play()
+        
 
     }
 

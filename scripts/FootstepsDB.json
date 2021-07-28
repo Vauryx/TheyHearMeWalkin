@@ -1,0 +1,19 @@
+{
+    "Default": ["Audio/Custom/Effects/Footsteps/footstep1.wav",
+                            "Audio/Custom/Effects/Footsteps/footstep2.wav",
+                            "Audio/Custom/Effects/Footsteps/footstep3.wav",
+                            "Audio/Custom/Effects/Footsteps/footstep4.wav",
+                            "Audio/Custom/Effects/Footsteps/footstep5.wav",
+                            "Audio/Custom/Effects/Footsteps/footstep6.wav"]
+,   "WoodMaterial": ["Audio/Custom/Effects/Footsteps/Wood/wood1.wav",
+                            "Audio/Custom/Effects/Footsteps/Wood/wood2.wav",
+                            "Audio/Custom/Effects/Footsteps/Wood/wood3.wav",
+                            "Audio/Custom/Effects/Footsteps/Wood/wood4.wav",
+                            "Audio/Custom/Effects/Footsteps/Wood/wood5.wav",
+                            "Audio/Custom/Effects/Footsteps/Wood/wood7.wav"]
+,   "GrassMaterial": ["Audio/Custom/Effects/Footsteps/Grass/grass1.wav",
+                            "Audio/Custom/Effects/Footsteps/Grass/grass2.wav",
+                            "Audio/Custom/Effects/Footsteps/Grass/grass3.wav",
+                            "Audio/Custom/Effects/Footsteps/Grass/grass4.wav",
+                            "Audio/Custom/Effects/Footsteps/Grass/grass5.wav"]
+}

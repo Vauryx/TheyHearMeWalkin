@@ -24,7 +24,6 @@ Hooks.once('init', async function() {
             }
         }
     });
-
 });
 
 Hooks.on("sequencer.ready", async () => {
@@ -33,10 +32,10 @@ Hooks.on("sequencer.ready", async () => {
         const json = await response.json();
         return json;
       }
-    let footstepsAudioFile = game.settings.get("targetreacts","footstepsAudioTest");
+    let footstepsAudioFile = game.settings.get("theyhearmewalkin","footstepsAudioDBFile");
     if(footstepsAudioFile != "")
     {
-        let footstepsAudioDB = getJSON(footstepsAudioFile);
+        let footstepsAudioDB = await getJSON(footstepsAudioFile);
         console.log(footstepsAudioDB);
         SequencerDatabase.registerEntries("FootStepsAudioDB", footstepsAudioDB);
     }
