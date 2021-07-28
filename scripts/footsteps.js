@@ -29,6 +29,7 @@ Hooks.on('updateToken',async (scene,data,moved)=>{
     if (data.x >0 || data.y > 0)
     {
         let footstepsAudioFile = game.settings.get("theyhearmewalkin","footstepsAudioDBFile");
+        let footstepsVolume = game.settings.get("theyhearmewalkin", "footstepsVolume");
         if(footstepsAudioFile != "")
         {
             let token = canvas.tokens.controlled[0];
@@ -46,6 +47,7 @@ Hooks.on('updateToken',async (scene,data,moved)=>{
             let footstepsSequence = new Sequence()
                 .sound()
                     .file(`FootStepsAudioDB.${materialName}`)
+                    .volume(footstepsVolume)
             footstepsSequence.play()
         }
         

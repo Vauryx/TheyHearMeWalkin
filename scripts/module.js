@@ -24,6 +24,19 @@ Hooks.once('init', async function() {
             }
         }
     });
+    game.settings.register("theyhearmewalkin", "footstepsVolume", {  
+        name: "Footsteps Volume",                  
+        hint: "Set how loudly the footsteps will be heard",               
+        scope: "world",                                     
+        config: true,                                      
+        type: Number,
+        range: {
+        min: 0,
+        max: 1,
+        step: 0.05,
+        },
+        default: 0.5                                  
+    });
 });
 
 Hooks.on("sequencer.ready", async () => {
